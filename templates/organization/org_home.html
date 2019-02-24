@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+
+
+{% block content %}
+<h1>Organization:{{org.name}}</h1>
+<!-- <h3>List Of Department :</h3>
+{% for i in org.departments.all %}
+<li>{{ i.name}}</li>
+{% endfor %} -->
+
+<a href="">Add Department</a>
+<br>
+<a href="">Add Faculty</a>
+<br>
+<a href="">Add Course</a>
+<br>
+<a href="">Add Subject</a>
+{% endblock %}

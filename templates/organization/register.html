@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+
+
+{% block content %}
+
+</form>
+<form method="POST">
+{% csrf_token %}
+<table>
+{{org_form.as_table}}
+{{admin_form.as_table}}
+</table>
+<input type="submit" value="Submit form">
+</form>
+{% endblock %}

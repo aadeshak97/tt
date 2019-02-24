@@ -1,0 +1,26 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<a href="{% url 'home' %}">Home</a>
+
+{% if user.is_authenticated %}
+<a href="{% url 'logout' %}?next={% url 'home' %}">Logout</a>
+
+<a href="{% url 'org:org_profile' request.user.org.slug %}">My Account</a>
+
+{% else %}
+<a href="{% url 'login' %}?next={% url 'home'%}">Login</a>
+<a href="{% url 'org:org_register' %}">Register</a>
+
+{% endif %}
+
+{% block content %}
+ffgghg
+{% endblock %}
+</body>
+</html>

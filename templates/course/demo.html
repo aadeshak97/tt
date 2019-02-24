@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+
+
+{% block content %}
+{% for i in sub %}
+{{i.code }}
+{% endfor %}
+{% endblock %}
