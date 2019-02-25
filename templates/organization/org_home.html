@@ -10,11 +10,11 @@
 <li>{{ i.name}}</li>
 {% endfor %} -->
 
-<a href="">Add Department</a>
+<a href="{% url 'org:org_depart' request.user.org.slug %}"> Department Details</a>
 <br>
-<a href="">Add Faculty</a>
+<a href="{% url 'org:faculty_list' %}">Faculty Details</a>
 <br>
-<a href="">Add Course</a>
+<a href="">Course Details</a>
 <br>
-<a href="">Add Subject</a>
+<a href="">Subject Details</a>
 {% endblock %}

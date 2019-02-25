@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <form  method="GET">
+        {{ form.as_p }}
+        <input type="submit" />
+    </form>
+    {% for f in faculties %}
+        {{f.name}}
+    {% endfor %}
+{% endblock %}

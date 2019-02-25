@@ -4,7 +4,8 @@ from django.http import HttpResponseRedirect
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import authenticate, login
 from .forms import OrganizationForm
-from .models import Organization
+from .models import Organization , Faculty
+from .forms import FacultyFilterForm
 
 # Create your views here.
 
@@ -37,3 +38,18 @@ def org_profile(request, slug):
 	return render(request, 'organization/org_home.html',{'org':org})
 
 
+def org_depart(request, slug):
+	org=Organization.objects.get(slug=slug)
+	return render(request, 'organization/org_department.html',{'org':org})
+
+
+def faculty_list(request):
+	org = request.user.org
+	form = FacultyFilterForm(org)
+	dept = request.GET.get('department')
+	if dept:
+		faculties = Faculty.objects.filter(department=dept)	
+	return render(request, 
+		          'organization/org_faculty.html', 
+		          {'form': form,'faculties': faculties})
+		                                               

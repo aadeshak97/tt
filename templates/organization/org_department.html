@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+
+
+{% block content %}
+<h1>Organization:{{org.name}}</h1>
+<h3>List Of Department :</h3>
+{% for i in org.departments.all %}
+<li>{{ i.name}}</li>
+{% endfor %}
+
+
+{% endblock %}
