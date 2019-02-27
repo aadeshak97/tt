@@ -13,5 +13,8 @@ urlpatterns = [
 		name='org_depart'),
 	path('department/faculty_list',
 	 	views.faculty_list,
-	 	name='faculty_list')
+	 	name='faculty_list'),
+	path('department/course_list',
+		views.course_list,
+		name='course_list')
 ]

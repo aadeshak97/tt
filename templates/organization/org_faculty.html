@@ -6,6 +6,6 @@
         <input type="submit" />
     </form>
     {% for f in faculties %}
-        {{f.name}}
+        <li>{{f.name}}({{f.emp_id}})</li>
     {% endfor %}
 {% endblock %}

@@ -47,9 +47,10 @@ def faculty_list(request):
 	org = request.user.org
 	form = FacultyFilterForm(org)
 	dept = request.GET.get('department')
-	if dept:
-		faculties = Faculty.objects.filter(department=dept)	
+	#if dept:
+	faculties = Faculty.objects.filter(department=dept)	
 	return render(request, 
 		          'organization/org_faculty.html', 
 		          {'form': form,'faculties': faculties})
-		                                               
+def course_list():
+	pass

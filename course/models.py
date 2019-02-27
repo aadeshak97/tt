@@ -32,12 +32,22 @@ class Subject(models.Model):
 			('tut','Tutorial'),
 		)
 	course = models.ForeignKey(Course, on_delete=models.CASCADE)
+	name = models.CharField(max_length=20, unique=True)
 	code = models.CharField(max_length=20, unique=True)
 	subject_type = models.CharField(max_length=3,choices=CH)
-	faculty = models.ForeignKey(Faculty, on_delete=models.CASCADE)
+	faculty = models.ManyToManyField(Faculty, through='Assignment')
 	total_duration = models.IntegerField()
 	period_per_week = models.IntegerField()
 	per_period_duration = models.IntegerField()
+
+	def __str__(self):
+		return self.name
+
+class Assignment(models.Model):
+	subject = models.ForeignKey(Subject, on_delete=models.CASCADE)
+	faculty=models.ForeignKey(Faculty, on_delete=models.CASCADE)
+	is_assign=models.BooleanField(default=False)
+
 
 
 
