@@ -27,12 +27,12 @@ class Course(models.Model):
     
 class Subject(models.Model):
 	CH=(
-			('lab','Lab'),
-			('lec','Lecture'),
-			('tut','Tutorial'),
+			('1','Lab'),
+			('2','Lecture'),
+			('3','Tutorial'),
 		)
 	course = models.ForeignKey(Course, on_delete=models.CASCADE)
-	name = models.CharField(max_length=20, unique=True)
+	name = models.CharField(max_length=20, unique=False)
 	code = models.CharField(max_length=20, unique=True)
 	subject_type = models.CharField(max_length=3,choices=CH)
 	faculty = models.ManyToManyField(Faculty, through='Assignment')
@@ -47,6 +47,10 @@ class Assignment(models.Model):
 	subject = models.ForeignKey(Subject, on_delete=models.CASCADE)
 	faculty=models.ForeignKey(Faculty, on_delete=models.CASCADE)
 	is_assign=models.BooleanField(default=False)
+
+	def __str__(self):
+		return str(self.faculty)+"("+str(self.subject)+")"+"("+str(self.is_assign)+")"
+
 
 
 
