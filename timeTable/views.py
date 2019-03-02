@@ -1,3 +1,8 @@
 from django.shortcuts import render
+from course.models import Subject
+import GA
 
-# Create your views here.
+obj = GA.SGA.getInstance(0,4,7,4,11)
+obj.callGA()
+
+# 

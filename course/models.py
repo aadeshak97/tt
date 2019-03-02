@@ -20,6 +20,10 @@ class Course(models.Model):
 	department = models.ForeignKey(Department, on_delete=models.CASCADE)
 	semester = models.CharField(max_length=3,choices=SEM)
 	program = models.CharField(max_length=3,choices=PRO)
+	working_days = models.IntegerField(default=0)
+	working_hrs = models.IntegerField(default=0)
+	
+
 
 	def __str__(self):
 		return str(self.department) + "(" + str(self.semester) + ")"
