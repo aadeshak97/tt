@@ -1,4 +1,4 @@
-from django.db import models
+from django.db import models	
 from organization.models import Department,Faculty
 
 # Create your models here.
@@ -48,15 +48,15 @@ class Subject(models.Model):
 		return self.name
 
 class Assignment(models.Model):
+	#courses = models.ForeignKey(Course, on_delete=models.CASCADE)
+	course = models.ForeignKey(Course, on_delete=models.CASCADE,default=0)
 	subject = models.ForeignKey(Subject, on_delete=models.CASCADE)
 	faculty=models.ForeignKey(Faculty, on_delete=models.CASCADE)
 	is_assign=models.BooleanField(default=False)
 
 	def __str__(self):
-		return str(self.faculty)+"("+str(self.subject)+")"+"("+str(self.is_assign)+")"
+		return str(self.faculty)+"("+str(self.subject)+")"+"("+str(self.is_assign)+")"+"("+str(self.course)+")"
 
 
-
-
-
-
+# class Relation(models.Model):
+# 	dept=

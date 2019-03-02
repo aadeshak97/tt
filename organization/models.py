@@ -24,7 +24,8 @@ class Department(models.Model):
 class Faculty(models.Model):
 	department = models.ForeignKey(Department, on_delete=models.CASCADE)
 	name = models.CharField(max_length=200)
-	emp_id = models.CharField(max_length=200)
+	emp_id = models.CharField(max_length=200 ,unique=True)
+	Faculty_load=models.IntegerField(default=1)
 
 	def __str__(self):
 		return str(self.name)+"("+str(self.emp_id)+")"
