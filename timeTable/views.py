@@ -1,8 +1,13 @@
-from django.shortcuts import render
-from course.models import Subject
-import GA
+# from django.shortcuts import render, redirect
+# from django.urls import reverse
+# from django.http import HttpResponseRedirect
+# from .forms import timetable
+# from course.models import Organization , Faculty,Assignment
+# import GA
 
-obj = GA.SGA.getInstance(0,4,7,4,11)
-obj.callGA()
+# def timetable(request):	
+# 	u=Assignment.objects.filter(is_assign=True).values_list('faculty__id','subject__subject_type','subject').count()	
+# 	obj = GA.SGA.getInstance(4,u,3)
+# 	obj.callGA()
 
-# 
+

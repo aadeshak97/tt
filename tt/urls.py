@@ -22,5 +22,6 @@ urlpatterns = [
 	path('user/',include('django.contrib.auth.urls')),
     path('admin/', admin.site.urls),
     path('course/',include('course.urls')),
-    path('organization/',include('organization.urls'))
+    path('organization/',include('organization.urls')),
+    #path('timetable/',include('timeTable.urls'))
 ]

@@ -34,6 +34,7 @@ INSTALLED_APPS = [
      'django_filters',
     'organization.apps.OrganizationConfig',
     'course.apps.CourseConfig',
+    'timeTable.apps.TimetableConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

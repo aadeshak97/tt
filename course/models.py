@@ -3,6 +3,7 @@ from organization.models import Department,Faculty
 
 # Create your models here.
 class Course(models.Model):
+	
 	SEM=(
 			('I','First'),
 			('II','Second'),
